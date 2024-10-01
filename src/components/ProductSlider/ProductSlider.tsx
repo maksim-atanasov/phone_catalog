@@ -67,7 +67,7 @@ export const ProductSlider: React.FC<Props> = ({
           ></button>
           <button
             disabled={
-              products.length - -blockLeft / step === getDeviceType(1, 3, 4)
+              products.length - -blockLeft / step === getDeviceType(1, 2, 4)
             }
             onClick={handleNext}
             className="product-slider__button product-slider__button-next"

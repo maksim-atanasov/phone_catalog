@@ -4,7 +4,6 @@ import { getDeviceType } from '../../utils/getDeviceType';
 import { getSlidesCoords } from '../../utils/getSlidesCoords';
 import React from 'react';
 
-
 const banners = [
   { id: 1, img: `${process.env.PUBLIC_URL}/img/banner-phones.png` },
   { id: 2, img: `${process.env.PUBLIC_URL}/img/banner-tablets.png` },
@@ -19,7 +18,27 @@ export const Slider: React.FC<Props> = ({ parentClassName }) => {
   const [touchStartX, setTouchStartX] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const slides = useRef<HTMLElement | null>(null);
-  const [step, setStep] = useState(getDeviceType(windowWidth, 490, 1040));
+  const wrapper = useRef<HTMLDivElement | null>(null);
+  const [step, setStep] = useState<number>(0);
+
+  const handleSetStep = useCallback((
+    element: React.MutableRefObject<HTMLDivElement | null>,
+  ) => {
+    if (element.current) {
+      setStep(
+        getDeviceType(
+          windowWidth,
+          element.current.getBoundingClientRect().width,
+          1040,
+        ),
+      );
+    }
+  }, [windowWidth]);
+
+  useEffect(() => {
+    handleSetStep(wrapper);
+  }, [handleSetStep]);
+
   const [currentX, setCurrentX] = useState(getSlidesCoords(step).first);
   const cooldownRef = useRef(false);
 
@@ -68,8 +87,8 @@ export const Slider: React.FC<Props> = ({ parentClassName }) => {
   const handleResize = useCallback(() => {
     setCurrentX(0);
     setWindowWidth(window.innerWidth);
-    setStep(getDeviceType(windowWidth, 490, 1040));
-  }, [windowWidth]);
+    handleSetStep(wrapper);
+  }, [handleSetStep]);
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
@@ -97,19 +116,19 @@ export const Slider: React.FC<Props> = ({ parentClassName }) => {
       <div onClick={handleSwipeLeft} className="home-page__slide-wrapper">
         <p className="home-page__slide-left home-page__slide" />
       </div>
-      <div className="home-page__wrapper">
+      <div ref={wrapper} className="home-page__wrapper">
         <section
           className={classNames('slider', {
             [`${parentClassName}__slider`]: parentClassName,
           })}
         >
           <article className="slider__slides" ref={slides}>
-            {banners.map(banner => (
+            {banners.map((banner) => (
               <img
-                onTouchStart={event =>
+                onTouchStart={(event) =>
                   setTouchStartX(event.changedTouches[0].clientX)
                 }
-                onTouchEnd={event => {
+                onTouchEnd={(event) => {
                   if (touchStartX - event.changedTouches[0].clientX > 5) {
                     handleAction(handleSwipeRight);
                   } else if (

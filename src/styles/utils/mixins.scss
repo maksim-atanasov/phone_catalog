@@ -38,7 +38,7 @@
   grid-template-columns: repeat(4, 60px);
 
   @include on-tablet {
-    grid-template-columns: repeat(12, 34.7px);
+    grid-template-columns: repeat(12, 5.5vw);
     padding-inline: 24px;
   }
 

@@ -14,13 +14,32 @@ export const MainFooter = () => {
       <img className="footer__logo" src={logo} alt="" />
       <ul className="footer__links">
         <li className="footer__link uppercase">
-          <a href="#">Github</a>
+          <a
+            target="_blank"
+            href="https://github.com/maksim-atanasov"
+            rel="noreferrer"
+          >
+            Github
+          </a>
         </li>
         <li className="footer__link uppercase">
-          <a href="#">Contacts</a>
+          <a
+            target="_blank"
+            href="https://github.com/maksim-atanasov"
+            rel="noreferrer"
+          >
+            Contacts
+          </a>
         </li>
         <li className="footer__link uppercase">
-          <a href="#">Rights</a>
+          <a
+            target="_blank"
+            // eslint-disable-next-line max-len
+            href="https://www.figma.com/design/BUusqCIMAWALqfBahnyIiH/Phone-catalog-(V2)-Original-Dark?node-id=0-1&node-type=canvas&t=ycl7iBfPaU9j5v1n-0"
+            rel="noreferrer"
+          >
+            Rights
+          </a>
         </li>
       </ul>
       <a className="footer__to-top small-text" onClick={scrollToTop}>
