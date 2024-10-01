@@ -8,7 +8,7 @@ This project is a Phone Catalog app designed to help users find gadgets they nee
 **React Router:** For handling routing within the application.<br>
 **TypeScript:** For type checking and ensuring code quality.<br>
 **Git:** For version control.<br>
-**SCSS:** For styling using mixins, variables, etc.
+**SCSS:** For styling using mixins, variables, etc.<br>
 **ESLint:** For static code analysis and maintaining code quality.<br>
 
 **Demo link of project** [here](https://maksim-atanasov.github.io/phone_catalog/)
