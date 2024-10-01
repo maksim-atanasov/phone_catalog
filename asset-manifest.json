@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.40af0d27.css",
-    "main.js": "./static/js/main.1a394e45.js",
+    "main.css": "./static/css/main.9520038a.css",
+    "main.js": "./static/js/main.82dc6871.js",
     "static/media/Tablets.png": "./static/media/Tablets.ed4d85992326c9d8f475.png",
     "static/media/Phones.png": "./static/media/Phones.1eadc4fca60417fc0fb2.png",
     "static/media/Mont-Regular.otf": "./static/media/Mont-Regular.1d26d89f7339866d3133.otf",
@@ -9,11 +9,11 @@
     "static/media/Mont-Bold.otf": "./static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
     "static/media/Accesories.png": "./static/media/Accesories.3c83b4226092fbc7e730.png",
     "index.html": "./index.html",
-    "main.40af0d27.css.map": "./static/css/main.40af0d27.css.map",
-    "main.1a394e45.js.map": "./static/js/main.1a394e45.js.map"
+    "main.9520038a.css.map": "./static/css/main.9520038a.css.map",
+    "main.82dc6871.js.map": "./static/js/main.82dc6871.js.map"
   },
   "entrypoints": [
-    "static/css/main.40af0d27.css",
-    "static/js/main.1a394e45.js"
+    "static/css/main.9520038a.css",
+    "static/js/main.82dc6871.js"
   ]
 }
