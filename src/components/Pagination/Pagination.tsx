@@ -86,6 +86,10 @@ export const Pagination: React.FC<Props> = ({
     setSearchParams(searchParams);
   };
 
+  if (totalPages === 1) {
+    return null;
+  }
+
   return (
     <section
       className={classNames('pagination', {
